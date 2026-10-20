@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Bảng Tuần Hoàn Các Nguyên Tố Hóa Học</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Pacifico&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+<div class="page">
+
+
+    <!-- =====================================================
+         TRANG TRÍ NGUYÊN TỬ
+    ====================================================== -->
+
+    <div class="atom-decoration" aria-hidden="true">
+
+        <div class="atom">
+
+            <div class="orbit orbit-1">
+                <span class="electron"></span>
+            </div>
+
+            <div class="orbit orbit-2">
+                <span class="electron"></span>
+            </div>
+
+            <div class="orbit orbit-3">
+                <span class="electron"></span>
+            </div>
+
+            <div class="nucleus"></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         TRANG TRÍ PHÂN TỬ
+    ====================================================== -->
+
+    <div class="molecule-decoration" aria-hidden="true">
+
+        <span class="molecule-ball ball-1"></span>
+        <span class="molecule-ball ball-2"></span>
+        <span class="molecule-ball ball-3"></span>
+        <span class="molecule-ball ball-4"></span>
+
+        <span class="bond bond-1"></span>
+        <span class="bond bond-2"></span>
+        <span class="bond bond-3"></span>
+
+    </div>
+
+
+
+    <!-- =====================================================
+                         TIÊU ĐỀ
+    ====================================================== -->
+
+    <header class="title-area">
+
+        <div class="title-small">
+            Bảng Tuần Hoàn
+        </div>
+
+        <div class="title-middle">
+            Các nguyên tố
+        </div>
+
+        <div class="title-main">
+            Hóa Học
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+                    BÌNH THÍ NGHIỆM
+    ====================================================== -->
+
+    <div class="flask-decoration" aria-hidden="true">
+
+        <div class="flask-neck"></div>
+
+        <div class="flask-body">
+
+            <div class="flask-liquid"></div>
+
+            <span class="flask-bubble bubble-a"></span>
+            <span class="flask-bubble bubble-b"></span>
+            <span class="flask-bubble bubble-c"></span>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+                      BẢNG TUẦN HOÀN
+    ====================================================== -->
+
+    <main>
+
+        <div class="periodic-scroll">
+
+            <div class="periodic-wrapper">
+
+
+                <!-- ===============================
+                     TÊN NHÓM IA, IIA...
+                ================================ -->
+
+                <div class="group-names">
+
+                    <span style="grid-column:1">IA</span>
+
+                    <span style="grid-column:2">IIA</span>
+
+                    <span style="grid-column:3">IIIB</span>
+
+                    <span style="grid-column:4">IVB</span>
+
+                    <span style="grid-column:5">VB</span>
+
+                    <span style="grid-column:6">VIB</span>
+
+                    <span style="grid-column:7">VIIB</span>
+
+                    <!-- VIIIB phải có đủ ở nhóm 8, 9, 10 -->
+
+                    <span style="grid-column:8">VIIIB</span>
+
+                    <span style="grid-column:9">VIIIB</span>
+
+                    <span style="grid-column:10">VIIIB</span>
+
+                    <span style="grid-column:11">IB</span>
+
+                    <span style="grid-column:12">IIB</span>
+
+                    <span style="grid-column:13">IIIA</span>
+
+                    <span style="grid-column:14">IVA</span>
+
+                    <span style="grid-column:15">VA</span>
+
+                    <span style="grid-column:16">VIA</span>
+
+                    <span style="grid-column:17">VIIA</span>
+
+                    <span style="grid-column:18">VIIIA</span>
+
+                </div>
+
+
+
+                <!-- ===============================
+                     SỐ NHÓM 1 → 18
+                ================================ -->
+
+                <div
+                    class="group-numbers"
+                    id="group-numbers">
+                </div>
+
+
+
+                <!-- ===============================
+                     BẢNG CHÍNH
+                ================================ -->
+
+                <div class="table-area">
+
+
+                    <!-- SỐ CHU KỲ -->
+
+                    <div class="period-labels">
+
+                        <span>1</span>
+                        <span>2</span>
+                        <span>3</span>
+                        <span>4</span>
+                        <span>5</span>
+                        <span>6</span>
+                        <span>7</span>
+
+                    </div>
+
+
+                    <!-- CÁC NGUYÊN TỐ -->
+
+                    <div id="periodic-table"></div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+                     HỌ LANTAN + ACTINI
+        ================================================== -->
+
+        <div class="f-block-scroll">
+
+            <section class="f-block-wrapper">
+
+
+                <div class="f-labels">
+
+                    <span>
+                        * Họ Lantan
+                    </span>
+
+                    <span>
+                        ** Họ Actini
+                    </span>
+
+                </div>
+
+
+                <div id="f-block"></div>
+
+
+            </section>
+
+        </div>
+
+
+
+        <!-- =================================================
+                          CHÚ THÍCH
+        ================================================== -->
+
+        <section class="legend">
+
+            <h3>
+                Phân loại nhóm nguyên tố theo màu / tính chất
+            </h3>
+
+
+            <div class="legend-grid">
+
+
+                <div class="legend-item">
+
+                    <span class="legend-dot alkali"></span>
+
+                    Kim loại kiềm
+
+                </div>
+
+
+                <div class="legend-item">
+
+                    <span class="legend-dot metalloid"></span>
+
+                    Á kim
+
+                </div>
+
+
+                <div class="legend-item">
+
+                    <span class="legend-dot halogen"></span>
+
+                    Halogen
+
+                </div>
+
+
+                <div class="legend-item">
+
+                    <span class="legend-dot alkaline"></span>
+
+                    Kim loại kiềm thổ
+
+                </div>
+
+
+                <div class="legend-item">
+
+                    <span class="legend-dot post-transition"></span>
+
+                    Kim loại hậu chuyển tiếp
+
+                </div>
+
+
+                <div class="legend-item">
+
+                    <span class="legend-dot noble"></span>
+
+                    Khí hiếm
+
+                </div>
+
+
+                <div class="legend-item">
+
+                    <span class="legend-dot transition"></span>
+
+                    Kim loại chuyển tiếp
+
+                </div>
+
+
+                <div class="legend-item">
+
+                    <span class="legend-dot nonmetal"></span>
+
+                    Các phi kim khác
+
+                </div>
+
+
+                <div class="legend-item">
+
+                    <span class="legend-dot lanthanide"></span>
+
+                    Họ Lantan
+
+                </div>
+
+
+                <div class="legend-item">
+
+                    <span class="legend-dot actinide"></span>
+
+                    Họ Actini
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+                       ỐNG NGHIỆM
+    ====================================================== -->
+
+    <div class="test-tubes" aria-hidden="true">
+
+        <div class="tube tube-one">
+            <span></span>
+        </div>
+
+        <div class="tube tube-two">
+            <span></span>
+        </div>
+
+        <div class="tube tube-three">
+            <span></span>
+        </div>
+
+        <div class="tube tube-four">
+            <span></span>
+        </div>
+
+    </div>
+
+
+</div>
+
+
+
+<!-- =========================================================
+                          POPUP QR
+========================================================= -->
+
+<div
+    id="element-modal"
+    class="modal"
+    aria-hidden="true"
+>
+
+    <div class="modal-content">
+
+
+        <!-- NÚT ĐÓNG -->
+
+        <button
+            id="close-modal"
+            class="close-btn"
+            type="button"
+            aria-label="Đóng"
+        >
+            ×
+        </button>
+
+
+
+        <!-- NGUYÊN TỐ ĐƯỢC CHỌN -->
+
+        <div class="selected-element">
+
+            <span id="modal-number"></span>
+
+            <span id="modal-symbol"></span>
+
+            <span id="modal-name"></span>
+
+        </div>
+
+
+
+        <!-- =================================================
+             VÙNG QR
+
+             HIỆN TẠI CỐ Ý ĐỂ TRỐNG.
+
+             SAU NÀY:
+             qr: "qr/O.png"
+        ================================================== -->
+
+        <div
+            id="qr-area"
+            class="qr-area">
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

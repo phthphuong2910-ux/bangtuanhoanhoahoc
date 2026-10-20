@@ -1,0 +1,1592 @@
+/* =========================================================
+   CÀI ĐẶT CHUNG
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+
+    min-height: 100vh;
+
+    padding:
+        20px
+        16px
+        45px;
+
+    color: white;
+
+    font-family:
+        "Patrick Hand",
+        cursive;
+
+    background:
+        radial-gradient(
+            circle at 12% 8%,
+            rgba(44, 91, 181, 0.22),
+            transparent 25%
+        ),
+
+        radial-gradient(
+            circle at 88% 18%,
+            rgba(121, 72, 190, 0.15),
+            transparent 24%
+        ),
+
+        #171d4d;
+}
+
+
+button {
+    font-family: inherit;
+}
+
+
+.page {
+    position: relative;
+
+    width: 100%;
+    max-width: 1500px;
+
+    margin: auto;
+}
+
+
+
+/* =========================================================
+   TIÊU ĐỀ
+========================================================= */
+
+.title-area {
+    position: relative;
+
+    z-index: 5;
+
+    width: fit-content;
+
+    margin:
+        5px
+        auto
+        30px;
+
+    text-align: center;
+}
+
+
+.title-small {
+    color: #b8efff;
+
+    font-size:
+        clamp(
+            33px,
+            3.5vw,
+            54px
+        );
+
+    line-height: 0.95;
+
+    text-shadow:
+        2px
+        3px
+        rgba(0,0,0,0.18);
+}
+
+
+.title-middle {
+    margin-top: 7px;
+
+    color: #fff2a3;
+
+    font-size:
+        clamp(
+            38px,
+            4vw,
+            61px
+        );
+
+    line-height: 0.95;
+}
+
+
+.title-main {
+    margin-top: 3px;
+
+    color: #fff8c8;
+
+    font-family:
+        "Pacifico",
+        cursive;
+
+    font-size:
+        clamp(
+            43px,
+            4.6vw,
+            70px
+        );
+
+    line-height: 1.15;
+
+    text-shadow:
+        3px
+        4px
+        rgba(0,0,0,0.18);
+}
+
+
+
+/* =========================================================
+   VÙNG CUỘN BẢNG
+========================================================= */
+
+.periodic-scroll {
+    width: 100%;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    padding-bottom: 15px;
+
+    -webkit-overflow-scrolling: touch;
+}
+
+
+.periodic-wrapper {
+    width: max-content;
+
+    margin: auto;
+}
+
+
+
+/* =========================================================
+   TÊN NHÓM IA → VIIIA
+========================================================= */
+
+.group-names {
+    display: grid;
+
+    grid-template-columns:
+        repeat(18, 65px);
+
+    gap: 6px;
+
+    margin-left: 37px;
+
+    margin-bottom: 5px;
+
+    color: #59ddff;
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    text-align: center;
+}
+
+
+.group-names span {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 0;
+}
+
+
+
+/* =========================================================
+   SỐ NHÓM 1 → 18
+========================================================= */
+
+.group-numbers {
+    display: grid;
+
+    grid-template-columns:
+        repeat(18, 65px);
+
+    gap: 6px;
+
+    margin-left: 37px;
+
+    margin-bottom: 8px;
+
+    color: #64e4ff;
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size: 12px;
+
+    text-align: center;
+}
+
+
+.group-number {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+/* =========================================================
+   BẢNG + SỐ CHU KỲ
+========================================================= */
+
+.table-area {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 10px;
+}
+
+
+.period-labels {
+    display: grid;
+
+    grid-template-rows:
+        repeat(7, 71px);
+
+    gap: 6px;
+
+    width: 27px;
+
+    color: #61e2ff;
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size: 14px;
+}
+
+
+.period-labels span {
+    display: flex;
+
+    align-items: center;
+    justify-content: flex-end;
+}
+
+
+
+/* =========================================================
+   GRID 18 × 7
+========================================================= */
+
+#periodic-table {
+    display: grid;
+
+    grid-template-columns:
+        repeat(18, 65px);
+
+    grid-template-rows:
+        repeat(7, 71px);
+
+    gap: 6px;
+
+    width: max-content;
+}
+
+
+
+/* =========================================================
+   Ô NGUYÊN TỐ
+========================================================= */
+
+.element {
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 65px;
+    height: 71px;
+
+    overflow: hidden;
+
+    border:
+        2px solid
+        rgba(255,255,255,0.58);
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    user-select: none;
+
+    box-shadow:
+        inset 0 0 7px
+        rgba(255,255,255,0.14),
+
+        0 2px 5px
+        rgba(0,0,0,0.20);
+
+    transition:
+        transform 0.17s ease,
+        filter 0.17s ease,
+        box-shadow 0.17s ease;
+}
+
+
+.element::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 2px;
+
+    border-radius: 3px;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.11),
+            transparent 45%,
+            rgba(0,0,0,0.07)
+        );
+}
+
+
+@media (hover:hover) and (pointer:fine) {
+
+    .element:hover {
+        z-index: 20;
+
+        transform:
+            translateY(-5px)
+            scale(1.08);
+
+        filter:
+            brightness(1.15);
+
+        box-shadow:
+            0 8px 16px
+            rgba(0,0,0,0.30),
+
+            0 0 12px
+            rgba(87,221,255,0.30);
+    }
+
+}
+
+
+.element:active {
+    transform: scale(0.96);
+}
+
+
+.element:focus-visible {
+    outline:
+        3px solid
+        #64e5ff;
+
+    outline-offset: 2px;
+}
+
+
+
+/* =========================================================
+   CHỮ TRONG Ô
+========================================================= */
+
+.atomic-number {
+    position: absolute;
+
+    top: 3px;
+    left: 5px;
+
+    z-index: 2;
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size: 9px;
+
+    font-weight: bold;
+
+    opacity: 0.82;
+}
+
+
+.symbol {
+    position: relative;
+
+    z-index: 2;
+
+    margin-top: 2px;
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size: 23px;
+
+    font-weight: 700;
+
+    line-height: 1;
+}
+
+
+.name {
+    position: relative;
+
+    z-index: 2;
+
+    width: 93%;
+
+    margin-top: 5px;
+
+    overflow: hidden;
+
+    font-size: 10px;
+
+    line-height: 1;
+
+    text-align: center;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+
+
+/* =========================================================
+   MÀU NHÓM
+========================================================= */
+
+.alkali {
+    background:
+        linear-gradient(
+            145deg,
+            #f44972,
+            #d82a57
+        );
+}
+
+
+.alkaline {
+    background:
+        linear-gradient(
+            145deg,
+            #ff9d28,
+            #ee7715
+        );
+}
+
+
+.transition {
+    color: #22284d;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffd63e,
+            #eeb71c
+        );
+}
+
+
+.transition .name {
+    color: #22284d;
+}
+
+
+.post-transition {
+    background:
+        linear-gradient(
+            145deg,
+            #45bff1,
+            #219bd5
+        );
+}
+
+
+.metalloid {
+    background:
+        linear-gradient(
+            145deg,
+            #3ac9bf,
+            #1da19d
+        );
+}
+
+
+.nonmetal {
+    background:
+        linear-gradient(
+            145deg,
+            #8dca32,
+            #65a918
+        );
+}
+
+
+.halogen {
+    background:
+        linear-gradient(
+            145deg,
+            #f4acd2,
+            #dc7fb2
+        );
+}
+
+
+.noble {
+    background:
+        linear-gradient(
+            145deg,
+            #aa5bea,
+            #803ecd
+        );
+}
+
+
+.lanthanide {
+    background:
+        linear-gradient(
+            145deg,
+            #6885e5,
+            #465fc5
+        );
+}
+
+
+.actinide {
+    background:
+        linear-gradient(
+            145deg,
+            #8460df,
+            #6144bd
+        );
+}
+
+
+
+/* =========================================================
+   Ô 57–71 / 89–103
+========================================================= */
+
+.series-placeholder {
+    width: 65px;
+    height: 71px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    border:
+        2px solid
+        rgba(255,255,255,0.58);
+
+    border-radius: 5px;
+
+    font-family:
+        Arial,
+        sans-serif;
+}
+
+
+.series-placeholder strong {
+    font-size: 13px;
+}
+
+
+.series-placeholder span {
+    margin-top: 4px;
+
+    font-size: 20px;
+
+    font-weight: bold;
+}
+
+
+
+/* =========================================================
+   LANTAN + ACTINI
+========================================================= */
+
+.f-block-scroll {
+    width: 100%;
+
+    overflow-x: auto;
+
+    padding-bottom: 8px;
+
+    -webkit-overflow-scrolling: touch;
+}
+
+
+.f-block-wrapper {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 13px;
+
+    width: max-content;
+
+    margin:
+        25px
+        auto
+        0;
+}
+
+
+.f-labels {
+    display: grid;
+
+    grid-template-rows:
+        repeat(2, 71px);
+
+    gap: 6px;
+
+    min-width: 95px;
+
+    color: #63dfff;
+
+    font-size: 16px;
+
+    text-align: right;
+}
+
+
+.f-labels span {
+    display: flex;
+
+    align-items: center;
+    justify-content: flex-end;
+}
+
+
+#f-block {
+    display: grid;
+
+    grid-template-columns:
+        repeat(15, 65px);
+
+    grid-template-rows:
+        repeat(2, 71px);
+
+    gap: 6px;
+
+    width: max-content;
+}
+
+
+
+/* =========================================================
+   CHÚ THÍCH
+========================================================= */
+
+.legend {
+    position: relative;
+
+    z-index: 3;
+
+    width:
+        min(
+            860px,
+            94%
+        );
+
+    margin:
+        37px
+        auto
+        0;
+
+    padding:
+        13px
+        24px
+        20px;
+
+    border:
+        3px solid
+        #7556da;
+
+    border-radius: 4px;
+
+    background:
+        rgba(19,25,69,0.45);
+}
+
+
+.legend h3 {
+    margin:
+        0
+        0
+        15px;
+
+    padding-bottom: 8px;
+
+    border-bottom:
+        2px solid
+        rgba(117,84,218,0.6);
+
+    color: #d9ceff;
+
+    font-size: 23px;
+
+    font-weight: normal;
+
+    text-align: center;
+}
+
+
+.legend-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:
+        11px
+        28px;
+}
+
+
+.legend-item {
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    color: #ddd9ff;
+
+    font-size: 18px;
+}
+
+
+.legend-dot {
+    flex:
+        0 0
+        18px;
+
+    width: 18px;
+    height: 18px;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.35);
+
+    border-radius: 50%;
+}
+
+
+
+/* =========================================================
+   NGUYÊN TỬ TRANG TRÍ
+========================================================= */
+
+.atom-decoration {
+    position: absolute;
+
+    top: 15px;
+    left: 25px;
+
+    z-index: 1;
+
+    width: 160px;
+    height: 145px;
+
+    pointer-events: none;
+}
+
+
+.atom {
+    position: relative;
+
+    width: 160px;
+    height: 145px;
+}
+
+
+.nucleus {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 30px;
+    height: 30px;
+
+    transform:
+        translate(-50%,-50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 30% 25%,
+            #ff9ee0,
+            #ff3ca9 48%,
+            #a01672
+        );
+
+    box-shadow:
+        0 0 15px
+        #ff43b3;
+}
+
+
+.orbit {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 135px;
+    height: 52px;
+
+    margin-left: -67.5px;
+    margin-top: -26px;
+
+    border:
+        3px solid
+        #58e2ff;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 7px
+        rgba(82,225,255,0.55);
+}
+
+
+.orbit-1 {
+    transform: rotate(0deg);
+}
+
+
+.orbit-2 {
+    transform: rotate(60deg);
+}
+
+
+.orbit-3 {
+    transform: rotate(-60deg);
+}
+
+
+.electron {
+    position: absolute;
+
+    top: 1px;
+    left: 17px;
+
+    width: 12px;
+    height: 12px;
+
+    border-radius: 50%;
+
+    background: #ffe53e;
+
+    box-shadow:
+        0 0 7px
+        #ffe53e;
+}
+
+
+
+/* =========================================================
+   PHÂN TỬ TRANG TRÍ
+========================================================= */
+
+.molecule-decoration {
+    position: absolute;
+
+    top: 72px;
+    left: 220px;
+
+    z-index: 1;
+
+    width: 120px;
+    height: 90px;
+
+    pointer-events: none;
+}
+
+
+.molecule-ball {
+    position: absolute;
+
+    z-index: 2;
+
+    border-radius: 50%;
+
+    box-shadow:
+        inset
+        -4px
+        -4px
+        7px
+        rgba(0,0,0,0.22);
+}
+
+
+.ball-1 {
+    left: 46px;
+    top: 30px;
+
+    width: 28px;
+    height: 28px;
+
+    background: #ce367d;
+}
+
+
+.ball-2 {
+    left: 4px;
+    top: 3px;
+
+    width: 25px;
+    height: 25px;
+
+    background: #3bb5df;
+}
+
+
+.ball-3 {
+    right: 5px;
+    top: 3px;
+
+    width: 28px;
+    height: 28px;
+
+    background: #d7ad29;
+}
+
+
+.ball-4 {
+    left: 51px;
+    bottom: 1px;
+
+    width: 27px;
+    height: 27px;
+
+    background: #64b846;
+}
+
+
+.bond {
+    position: absolute;
+
+    z-index: 1;
+
+    left: 60px;
+    top: 43px;
+
+    width: 50px;
+    height: 6px;
+
+    transform-origin:
+        left center;
+
+    border-radius: 5px;
+
+    background:
+        #7887b8;
+}
+
+
+.bond-1 {
+    transform: rotate(-145deg);
+}
+
+
+.bond-2 {
+    transform: rotate(-35deg);
+}
+
+
+.bond-3 {
+    transform: rotate(88deg);
+}
+
+
+
+/* =========================================================
+   BÌNH THÍ NGHIỆM - ĐÃ SỬA
+========================================================= */
+
+.flask-decoration {
+    position: absolute;
+
+    top: 25px;
+    right: 65px;
+
+    z-index: 1;
+
+    width: 120px;
+    height: 155px;
+
+    pointer-events: none;
+
+    opacity: 0.92;
+}
+
+
+.flask-neck {
+    position: absolute;
+
+    top: 0;
+    left: 45px;
+
+    z-index: 1;
+
+    width: 30px;
+    height: 65px;
+
+    border-top:
+        4px solid
+        #94a7d8;
+
+    border-left:
+        4px solid
+        #94a7d8;
+
+    border-right:
+        4px solid
+        #94a7d8;
+
+    border-radius:
+        6px
+        6px
+        0
+        0;
+
+    background:
+        rgba(255,255,255,0.02);
+}
+
+
+.flask-body {
+    position: absolute;
+
+    top: 55px;
+    left: 13px;
+
+    z-index: 2;
+
+    width: 94px;
+    height: 91px;
+
+    overflow: hidden;
+
+    border:
+        4px solid
+        #94a7d8;
+
+    border-radius:
+        16px
+        16px
+        45px
+        45px;
+
+    background:
+        rgba(255,255,255,0.025);
+}
+
+
+.flask-liquid {
+    position: absolute;
+
+    left: 4px;
+    right: 4px;
+    bottom: 4px;
+
+    height: 43%;
+
+    border-radius:
+        4px
+        4px
+        37px
+        37px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #29dcf3,
+            #13a7dc
+        );
+
+    box-shadow:
+        0 0 14px
+        rgba(32,210,245,0.45);
+}
+
+
+.flask-bubble {
+    position: absolute;
+
+    z-index: 5;
+
+    border:
+        2px solid
+        #64eaff;
+
+    border-radius: 50%;
+}
+
+
+.bubble-a {
+    width: 10px;
+    height: 10px;
+
+    left: 45px;
+    bottom: 31px;
+}
+
+
+.bubble-b {
+    width: 7px;
+    height: 7px;
+
+    left: 26px;
+    bottom: 22px;
+}
+
+
+.bubble-c {
+    width: 7px;
+    height: 7px;
+
+    right: 26px;
+    bottom: 17px;
+}
+
+
+
+/* =========================================================
+   ỐNG NGHIỆM
+========================================================= */
+
+.test-tubes {
+    position: absolute;
+
+    right: 5px;
+    bottom: 20px;
+
+    z-index: 1;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    gap: 8px;
+
+    opacity: 0.75;
+
+    pointer-events: none;
+}
+
+
+.tube {
+    position: relative;
+
+    width: 24px;
+    height: 92px;
+
+    overflow: hidden;
+
+    border:
+        3px solid
+        rgba(216,235,255,0.72);
+
+    border-radius:
+        3px
+        3px
+        13px
+        13px;
+}
+
+
+.tube span {
+    position: absolute;
+
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+
+    height: 45%;
+
+    border-radius:
+        0
+        0
+        9px
+        9px;
+}
+
+
+.tube-one span {
+    background: #ca3ee8;
+}
+
+
+.tube-two {
+    height: 78px;
+}
+
+
+.tube-two span {
+    background: #2bc6ee;
+}
+
+
+.tube-three {
+    height: 102px;
+}
+
+
+.tube-three span {
+    background: #66d04d;
+}
+
+
+.tube-four {
+    height: 70px;
+}
+
+
+.tube-four span {
+    background: #ffd13b;
+}
+
+
+
+/* =========================================================
+   POPUP
+========================================================= */
+
+.modal {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 1000;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background:
+        rgba(5,8,30,0.90);
+
+    backdrop-filter:
+        blur(6px);
+}
+
+
+.modal.show {
+    display: flex;
+}
+
+
+.modal-content {
+    position: relative;
+
+    width:
+        min(
+            400px,
+            100%
+        );
+
+    padding:
+        28px
+        30px
+        32px;
+
+    border:
+        2px solid
+        #60dfff;
+
+    border-radius: 15px;
+
+    background:
+        #171d4d;
+
+    box-shadow:
+        0 0 32px
+        rgba(70,216,255,0.30);
+}
+
+
+.close-btn {
+    position: absolute;
+
+    top: 5px;
+    right: 10px;
+
+    width: 45px;
+    height: 45px;
+
+    border: 0;
+
+    border-radius: 50%;
+
+    color: white;
+
+    background: transparent;
+
+    font-size: 34px;
+
+    cursor: pointer;
+}
+
+
+.close-btn:hover {
+    background:
+        rgba(255,255,255,0.08);
+}
+
+
+
+/* =========================================================
+   NGUYÊN TỐ TRONG POPUP
+========================================================= */
+
+.selected-element {
+    margin-bottom: 16px;
+
+    text-align: center;
+}
+
+
+#modal-number {
+    display: block;
+
+    color: #9ee6fa;
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size: 13px;
+}
+
+
+#modal-symbol {
+    display: block;
+
+    margin-top: 2px;
+
+    color: #68e3ff;
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size: 65px;
+
+    font-weight: bold;
+
+    line-height: 1.05;
+}
+
+
+#modal-name {
+    display: block;
+
+    margin-top: 5px;
+
+    color: white;
+
+    font-size: 23px;
+}
+
+
+
+/* =========================================================
+   KHU VỰC QR
+========================================================= */
+
+.qr-area {
+    width: 270px;
+    height: 270px;
+
+    max-width: 100%;
+
+    margin:
+        18px
+        auto
+        0;
+
+    border:
+        2px dashed
+        rgba(124,224,249,0.30);
+
+    border-radius: 11px;
+
+    background:
+        rgba(255,255,255,0.015);
+}
+
+
+.qr-area img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    padding: 8px;
+
+    object-fit: contain;
+
+    border-radius: 10px;
+}
+
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1300px) {
+
+    .periodic-wrapper {
+        margin-left: 0;
+    }
+
+
+    .f-block-wrapper {
+        margin-left: 0;
+    }
+
+
+    .atom-decoration,
+    .molecule-decoration,
+    .flask-decoration {
+        opacity: 0.35;
+    }
+
+}
+
+
+
+/* =========================================================
+   ĐIỆN THOẠI
+========================================================= */
+
+@media (max-width: 700px) {
+
+    body {
+        padding:
+            14px
+            8px
+            30px;
+    }
+
+
+    .title-area {
+        margin-bottom: 22px;
+    }
+
+
+    .atom-decoration,
+    .molecule-decoration,
+    .flask-decoration,
+    .test-tubes {
+        display: none;
+    }
+
+
+    /*
+       Bảng không bị bóp nhỏ.
+       Vuốt ngang trên điện thoại.
+    */
+
+    .periodic-scroll,
+    .f-block-scroll {
+        overflow-x: auto;
+
+        -webkit-overflow-scrolling: touch;
+    }
+
+
+    .periodic-wrapper,
+    .f-block-wrapper {
+        margin-left: 0;
+    }
+
+
+    .legend {
+        width: 100%;
+    }
+
+
+    .legend-grid {
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+}
+
+
+
+/* =========================================================
+   ĐIỆN THOẠI NHỎ
+========================================================= */
+
+@media (max-width: 450px) {
+
+    .title-small {
+        font-size: 29px;
+    }
+
+
+    .title-middle {
+        font-size: 34px;
+    }
+
+
+    .title-main {
+        font-size: 39px;
+    }
+
+
+    .legend-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .modal-content {
+        padding:
+            25px
+            18px;
+    }
+
+
+    .qr-area {
+        width: 235px;
+        height: 235px;
+    }
+
+}
