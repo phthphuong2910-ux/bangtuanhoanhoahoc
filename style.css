@@ -1,5 +1,5 @@
 /* =========================================================
-   CÀI ĐẶT CHUNG
+   1. CÀI ĐẶT CHUNG
 ========================================================= */
 
 * {
@@ -28,15 +28,21 @@ body {
 
     background:
         radial-gradient(
-            circle at 12% 8%,
-            rgba(44, 91, 181, 0.22),
+            circle at 12% 10%,
+            rgba(38, 89, 184, 0.22),
+            transparent 27%
+        ),
+
+        radial-gradient(
+            circle at 88% 15%,
+            rgba(122, 68, 190, 0.15),
             transparent 25%
         ),
 
         radial-gradient(
-            circle at 88% 18%,
-            rgba(121, 72, 190, 0.15),
-            transparent 24%
+            circle at 50% 100%,
+            rgba(32, 75, 160, 0.13),
+            transparent 38%
         ),
 
         #171d4d;
@@ -54,13 +60,13 @@ button {
     width: 100%;
     max-width: 1500px;
 
-    margin: auto;
+    margin: 0 auto;
 }
 
 
 
 /* =========================================================
-   TIÊU ĐỀ
+   2. TIÊU ĐỀ
 ========================================================= */
 
 .title-area {
@@ -71,29 +77,34 @@ button {
     width: fit-content;
 
     margin:
-        5px
+        0
         auto
-        30px;
+        24px;
 
     text-align: center;
+
+    transform: rotate(-1deg);
 }
 
 
 .title-small {
-    color: #b8efff;
+    color: #b7edff;
 
     font-size:
         clamp(
-            33px,
-            3.5vw,
-            54px
+            32px,
+            3.4vw,
+            52px
         );
 
     line-height: 0.95;
 
+    letter-spacing: 1px;
+
     text-shadow:
         2px
         3px
+        0
         rgba(0,0,0,0.18);
 }
 
@@ -101,23 +112,25 @@ button {
 .title-middle {
     margin-top: 7px;
 
-    color: #fff2a3;
+    color: #fff4aa;
 
     font-size:
         clamp(
-            38px,
+            37px,
             4vw,
-            61px
+            60px
         );
 
     line-height: 0.95;
+
+    letter-spacing: 1px;
 }
 
 
 .title-main {
-    margin-top: 3px;
+    margin-top: 2px;
 
-    color: #fff8c8;
+    color: #fff8c9;
 
     font-family:
         "Pacifico",
@@ -125,7 +138,7 @@ button {
 
     font-size:
         clamp(
-            43px,
+            42px,
             4.6vw,
             70px
         );
@@ -135,52 +148,174 @@ button {
     text-shadow:
         3px
         4px
-        rgba(0,0,0,0.18);
+        0
+        rgba(0,0,0,0.20);
 }
 
 
 
 /* =========================================================
-   VÙNG CUỘN BẢNG
+   3. ẢNH 3D
 ========================================================= */
 
-.periodic-scroll {
+.decor-image {
+    position: absolute;
+
+    z-index: 1;
+
+    display: block;
+
+    object-fit: contain;
+
+    pointer-events: none;
+
+    user-select: none;
+
+    filter:
+        drop-shadow(
+            0
+            9px
+            12px
+            rgba(0,0,0,0.28)
+        );
+}
+
+
+/* NGUYÊN TỬ */
+
+.atom-image {
+    top: -5px;
+    left: 10px;
+
+    width: 320px;
+
+    transform:
+        rotate(-7deg);
+}
+
+
+/* PHÂN TỬ */
+
+.molecule-image {
+    top: 20px;
+    left: 210px;
+
+    width: 300px;
+
+    transform:
+        rotate(-4deg);
+}
+
+
+/* BÌNH HÓA HỌC */
+
+.flask-image {
+    top: 0;
+    right: -10px;
+
+    width: 350px;
+
+    transform:
+        rotate(6deg);
+}
+
+
+/* ỐNG NGHIỆM */
+
+.tubes-image {
+    right: 5px;
+    bottom: 10px;
+
+    width: 330px;
+
+    transform:
+        rotate(3deg);
+}
+
+
+
+/* =========================================================
+   4. VÙNG SCROLL
+========================================================= */
+
+.periodic-scroll,
+.f-block-scroll {
     width: 100%;
 
     overflow-x: auto;
     overflow-y: hidden;
 
-    padding-bottom: 15px;
-
     -webkit-overflow-scrolling: touch;
+}
+
+
+.periodic-scroll {
+    padding-bottom: 12px;
 }
 
 
 .periodic-wrapper {
     width: max-content;
 
-    margin: auto;
+    margin: 0 auto;
 }
 
 
 
 /* =========================================================
-   TÊN NHÓM IA → VIIIA
+   5. CHỮ NHÓM
+========================================================= */
+
+.group-title {
+    /*
+        Bảng bắt đầu sau:
+        CHU KỲ 65px
+        gap 9px
+        số chu kỳ 27px
+        gap 9px
+        = 110px
+    */
+
+    margin-left: 110px;
+
+    width: 1272px;
+
+    margin-bottom: 4px;
+
+    color: #62e2ff;
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    letter-spacing: 4px;
+
+    text-align: center;
+}
+
+
+
+/* =========================================================
+   6. IA → VIIIA
 ========================================================= */
 
 .group-names {
     display: grid;
 
     grid-template-columns:
-        repeat(18, 65px);
+        repeat(18,65px);
 
     gap: 6px;
 
-    margin-left: 37px;
+    margin-left: 110px;
 
-    margin-bottom: 5px;
+    margin-bottom: 4px;
 
-    color: #59ddff;
+    color: #60e1ff;
 
     font-family:
         Arial,
@@ -206,22 +341,22 @@ button {
 
 
 /* =========================================================
-   SỐ NHÓM 1 → 18
+   7. SỐ NHÓM 1 → 18
 ========================================================= */
 
 .group-numbers {
     display: grid;
 
     grid-template-columns:
-        repeat(18, 65px);
+        repeat(18,65px);
 
     gap: 6px;
 
-    margin-left: 37px;
+    margin-left: 110px;
 
     margin-bottom: 8px;
 
-    color: #64e4ff;
+    color: #63e4ff;
 
     font-family:
         Arial,
@@ -243,7 +378,7 @@ button {
 
 
 /* =========================================================
-   BẢNG + SỐ CHU KỲ
+   8. BẢNG + CHU KỲ
 ========================================================= */
 
 .table-area {
@@ -251,19 +386,65 @@ button {
 
     align-items: flex-start;
 
-    gap: 10px;
+    gap: 9px;
 }
 
+
+
+/* =========================================================
+   9. CHỮ CHU KỲ
+========================================================= */
+
+.period-title {
+    flex:
+        0 0
+        65px;
+
+    width: 65px;
+
+    /*
+       CHỮ NẰM NGANG
+       KHÔNG ROTATE
+    */
+
+    padding-top: 28px;
+
+    color: #62e2ff;
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    text-align: center;
+
+    white-space: nowrap;
+}
+
+
+
+/* =========================================================
+   10. SỐ CHU KỲ 1 → 7
+========================================================= */
 
 .period-labels {
     display: grid;
 
     grid-template-rows:
-        repeat(7, 71px);
+        repeat(7,71px);
 
     gap: 6px;
 
     width: 27px;
+
+    flex:
+        0 0
+        27px;
 
     color: #61e2ff;
 
@@ -279,23 +460,23 @@ button {
     display: flex;
 
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
 }
 
 
 
 /* =========================================================
-   GRID 18 × 7
+   11. GRID BẢNG TUẦN HOÀN
 ========================================================= */
 
 #periodic-table {
     display: grid;
 
     grid-template-columns:
-        repeat(18, 65px);
+        repeat(18,65px);
 
     grid-template-rows:
-        repeat(7, 71px);
+        repeat(7,71px);
 
     gap: 6px;
 
@@ -305,11 +486,16 @@ button {
 
 
 /* =========================================================
-   Ô NGUYÊN TỐ
+   12. Ô NGUYÊN TỐ
 ========================================================= */
 
 .element {
     position: relative;
+
+    width: 65px;
+    height: 71px;
+
+    overflow: hidden;
 
     display: flex;
 
@@ -317,11 +503,6 @@ button {
 
     align-items: center;
     justify-content: center;
-
-    width: 65px;
-    height: 71px;
-
-    overflow: hidden;
 
     border:
         2px solid
@@ -334,7 +515,8 @@ button {
     user-select: none;
 
     box-shadow:
-        inset 0 0 7px
+        inset
+        0 0 7px
         rgba(255,255,255,0.14),
 
         0 2px 5px
@@ -378,7 +560,10 @@ button {
             scale(1.08);
 
         filter:
-            brightness(1.15);
+            brightness(1.15)
+            saturate(1.06);
+
+        border-color: white;
 
         box-shadow:
             0 8px 16px
@@ -407,7 +592,7 @@ button {
 
 
 /* =========================================================
-   CHỮ TRONG Ô
+   13. CHỮ TRONG Ô
 ========================================================= */
 
 .atomic-number {
@@ -460,6 +645,9 @@ button {
 
     overflow: hidden;
 
+    color:
+        rgba(255,255,255,0.94);
+
     font-size: 10px;
 
     line-height: 1;
@@ -474,7 +662,7 @@ button {
 
 
 /* =========================================================
-   MÀU NHÓM
+   14. MÀU NHÓM
 ========================================================= */
 
 .alkali {
@@ -586,7 +774,7 @@ button {
 
 
 /* =========================================================
-   Ô 57–71 / 89–103
+   15. Ô 57–71 / 89–103
 ========================================================= */
 
 .series-placeholder {
@@ -628,19 +816,8 @@ button {
 
 
 /* =========================================================
-   LANTAN + ACTINI
+   16. LANTAN + ACTINI
 ========================================================= */
-
-.f-block-scroll {
-    width: 100%;
-
-    overflow-x: auto;
-
-    padding-bottom: 8px;
-
-    -webkit-overflow-scrolling: touch;
-}
-
 
 .f-block-wrapper {
     display: flex;
@@ -652,7 +829,7 @@ button {
     width: max-content;
 
     margin:
-        25px
+        27px
         auto
         0;
 }
@@ -662,11 +839,11 @@ button {
     display: grid;
 
     grid-template-rows:
-        repeat(2, 71px);
+        repeat(2,71px);
 
     gap: 6px;
 
-    min-width: 95px;
+    min-width: 105px;
 
     color: #63dfff;
 
@@ -688,10 +865,10 @@ button {
     display: grid;
 
     grid-template-columns:
-        repeat(15, 65px);
+        repeat(15,65px);
 
     grid-template-rows:
-        repeat(2, 71px);
+        repeat(2,71px);
 
     gap: 6px;
 
@@ -701,7 +878,7 @@ button {
 
 
 /* =========================================================
-   CHÚ THÍCH
+   17. CHÚ THÍCH
 ========================================================= */
 
 .legend {
@@ -716,7 +893,7 @@ button {
         );
 
     margin:
-        37px
+        38px
         auto
         0;
 
@@ -732,7 +909,12 @@ button {
     border-radius: 4px;
 
     background:
-        rgba(19,25,69,0.45);
+        rgba(19,25,69,0.55);
+
+    box-shadow:
+        inset
+        0 0 15px
+        rgba(123,84,220,0.12);
 }
 
 
@@ -746,7 +928,7 @@ button {
 
     border-bottom:
         2px solid
-        rgba(117,84,218,0.6);
+        rgba(117,84,218,0.60);
 
     color: #d9ceff;
 
@@ -801,486 +983,7 @@ button {
 
 
 /* =========================================================
-   NGUYÊN TỬ TRANG TRÍ
-========================================================= */
-
-.atom-decoration {
-    position: absolute;
-
-    top: 15px;
-    left: 25px;
-
-    z-index: 1;
-
-    width: 160px;
-    height: 145px;
-
-    pointer-events: none;
-}
-
-
-.atom {
-    position: relative;
-
-    width: 160px;
-    height: 145px;
-}
-
-
-.nucleus {
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    width: 30px;
-    height: 30px;
-
-    transform:
-        translate(-50%,-50%);
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle at 30% 25%,
-            #ff9ee0,
-            #ff3ca9 48%,
-            #a01672
-        );
-
-    box-shadow:
-        0 0 15px
-        #ff43b3;
-}
-
-
-.orbit {
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    width: 135px;
-    height: 52px;
-
-    margin-left: -67.5px;
-    margin-top: -26px;
-
-    border:
-        3px solid
-        #58e2ff;
-
-    border-radius: 50%;
-
-    box-shadow:
-        0 0 7px
-        rgba(82,225,255,0.55);
-}
-
-
-.orbit-1 {
-    transform: rotate(0deg);
-}
-
-
-.orbit-2 {
-    transform: rotate(60deg);
-}
-
-
-.orbit-3 {
-    transform: rotate(-60deg);
-}
-
-
-.electron {
-    position: absolute;
-
-    top: 1px;
-    left: 17px;
-
-    width: 12px;
-    height: 12px;
-
-    border-radius: 50%;
-
-    background: #ffe53e;
-
-    box-shadow:
-        0 0 7px
-        #ffe53e;
-}
-
-
-
-/* =========================================================
-   PHÂN TỬ TRANG TRÍ
-========================================================= */
-
-.molecule-decoration {
-    position: absolute;
-
-    top: 72px;
-    left: 220px;
-
-    z-index: 1;
-
-    width: 120px;
-    height: 90px;
-
-    pointer-events: none;
-}
-
-
-.molecule-ball {
-    position: absolute;
-
-    z-index: 2;
-
-    border-radius: 50%;
-
-    box-shadow:
-        inset
-        -4px
-        -4px
-        7px
-        rgba(0,0,0,0.22);
-}
-
-
-.ball-1 {
-    left: 46px;
-    top: 30px;
-
-    width: 28px;
-    height: 28px;
-
-    background: #ce367d;
-}
-
-
-.ball-2 {
-    left: 4px;
-    top: 3px;
-
-    width: 25px;
-    height: 25px;
-
-    background: #3bb5df;
-}
-
-
-.ball-3 {
-    right: 5px;
-    top: 3px;
-
-    width: 28px;
-    height: 28px;
-
-    background: #d7ad29;
-}
-
-
-.ball-4 {
-    left: 51px;
-    bottom: 1px;
-
-    width: 27px;
-    height: 27px;
-
-    background: #64b846;
-}
-
-
-.bond {
-    position: absolute;
-
-    z-index: 1;
-
-    left: 60px;
-    top: 43px;
-
-    width: 50px;
-    height: 6px;
-
-    transform-origin:
-        left center;
-
-    border-radius: 5px;
-
-    background:
-        #7887b8;
-}
-
-
-.bond-1 {
-    transform: rotate(-145deg);
-}
-
-
-.bond-2 {
-    transform: rotate(-35deg);
-}
-
-
-.bond-3 {
-    transform: rotate(88deg);
-}
-
-
-
-/* =========================================================
-   BÌNH THÍ NGHIỆM - ĐÃ SỬA
-========================================================= */
-
-.flask-decoration {
-    position: absolute;
-
-    top: 25px;
-    right: 65px;
-
-    z-index: 1;
-
-    width: 120px;
-    height: 155px;
-
-    pointer-events: none;
-
-    opacity: 0.92;
-}
-
-
-.flask-neck {
-    position: absolute;
-
-    top: 0;
-    left: 45px;
-
-    z-index: 1;
-
-    width: 30px;
-    height: 65px;
-
-    border-top:
-        4px solid
-        #94a7d8;
-
-    border-left:
-        4px solid
-        #94a7d8;
-
-    border-right:
-        4px solid
-        #94a7d8;
-
-    border-radius:
-        6px
-        6px
-        0
-        0;
-
-    background:
-        rgba(255,255,255,0.02);
-}
-
-
-.flask-body {
-    position: absolute;
-
-    top: 55px;
-    left: 13px;
-
-    z-index: 2;
-
-    width: 94px;
-    height: 91px;
-
-    overflow: hidden;
-
-    border:
-        4px solid
-        #94a7d8;
-
-    border-radius:
-        16px
-        16px
-        45px
-        45px;
-
-    background:
-        rgba(255,255,255,0.025);
-}
-
-
-.flask-liquid {
-    position: absolute;
-
-    left: 4px;
-    right: 4px;
-    bottom: 4px;
-
-    height: 43%;
-
-    border-radius:
-        4px
-        4px
-        37px
-        37px;
-
-    background:
-        linear-gradient(
-            180deg,
-            #29dcf3,
-            #13a7dc
-        );
-
-    box-shadow:
-        0 0 14px
-        rgba(32,210,245,0.45);
-}
-
-
-.flask-bubble {
-    position: absolute;
-
-    z-index: 5;
-
-    border:
-        2px solid
-        #64eaff;
-
-    border-radius: 50%;
-}
-
-
-.bubble-a {
-    width: 10px;
-    height: 10px;
-
-    left: 45px;
-    bottom: 31px;
-}
-
-
-.bubble-b {
-    width: 7px;
-    height: 7px;
-
-    left: 26px;
-    bottom: 22px;
-}
-
-
-.bubble-c {
-    width: 7px;
-    height: 7px;
-
-    right: 26px;
-    bottom: 17px;
-}
-
-
-
-/* =========================================================
-   ỐNG NGHIỆM
-========================================================= */
-
-.test-tubes {
-    position: absolute;
-
-    right: 5px;
-    bottom: 20px;
-
-    z-index: 1;
-
-    display: flex;
-
-    align-items: flex-end;
-
-    gap: 8px;
-
-    opacity: 0.75;
-
-    pointer-events: none;
-}
-
-
-.tube {
-    position: relative;
-
-    width: 24px;
-    height: 92px;
-
-    overflow: hidden;
-
-    border:
-        3px solid
-        rgba(216,235,255,0.72);
-
-    border-radius:
-        3px
-        3px
-        13px
-        13px;
-}
-
-
-.tube span {
-    position: absolute;
-
-    left: 2px;
-    right: 2px;
-    bottom: 2px;
-
-    height: 45%;
-
-    border-radius:
-        0
-        0
-        9px
-        9px;
-}
-
-
-.tube-one span {
-    background: #ca3ee8;
-}
-
-
-.tube-two {
-    height: 78px;
-}
-
-
-.tube-two span {
-    background: #2bc6ee;
-}
-
-
-.tube-three {
-    height: 102px;
-}
-
-
-.tube-three span {
-    background: #66d04d;
-}
-
-
-.tube-four {
-    height: 70px;
-}
-
-
-.tube-four span {
-    background: #ffd13b;
-}
-
-
-
-/* =========================================================
-   POPUP
+   18. POPUP
 ========================================================= */
 
 .modal {
@@ -1370,7 +1073,7 @@ button {
 
 
 /* =========================================================
-   NGUYÊN TỐ TRONG POPUP
+   19. NGUYÊN TỐ TRONG POPUP
 ========================================================= */
 
 .selected-element {
@@ -1425,7 +1128,7 @@ button {
 
 
 /* =========================================================
-   KHU VỰC QR
+   20. QR
 ========================================================= */
 
 .qr-area {
@@ -1466,25 +1169,19 @@ button {
 
 
 /* =========================================================
-   TABLET
+   21. TABLET
 ========================================================= */
 
-@media (max-width: 1300px) {
+@media (max-width:1300px) {
 
-    .periodic-wrapper {
-        margin-left: 0;
-    }
-
-
+    .periodic-wrapper,
     .f-block-wrapper {
         margin-left: 0;
     }
 
 
-    .atom-decoration,
-    .molecule-decoration,
-    .flask-decoration {
-        opacity: 0.35;
+    .decor-image {
+        opacity: 0.40;
     }
 
 }
@@ -1492,10 +1189,10 @@ button {
 
 
 /* =========================================================
-   ĐIỆN THOẠI
+   22. ĐIỆN THOẠI
 ========================================================= */
 
-@media (max-width: 700px) {
+@media (max-width:700px) {
 
     body {
         padding:
@@ -1510,24 +1207,13 @@ button {
     }
 
 
-    .atom-decoration,
-    .molecule-decoration,
-    .flask-decoration,
-    .test-tubes {
-        display: none;
-    }
-
-
     /*
-       Bảng không bị bóp nhỏ.
-       Vuốt ngang trên điện thoại.
+       Ẩn trang trí trên màn hình nhỏ
+       để không che bảng.
     */
 
-    .periodic-scroll,
-    .f-block-scroll {
-        overflow-x: auto;
-
-        -webkit-overflow-scrolling: touch;
+    .decor-image {
+        display: none;
     }
 
 
@@ -1552,10 +1238,10 @@ button {
 
 
 /* =========================================================
-   ĐIỆN THOẠI NHỎ
+   23. ĐIỆN THOẠI NHỎ
 ========================================================= */
 
-@media (max-width: 450px) {
+@media (max-width:450px) {
 
     .title-small {
         font-size: 29px;
