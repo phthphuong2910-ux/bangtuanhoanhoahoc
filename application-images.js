@@ -1,0 +1,1 @@
+(()=>{const id=Number(new URLSearchParams(location.search).get('id'));const imgs={};})();
