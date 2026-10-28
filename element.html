@@ -12,7 +12,7 @@
 <a class="back" href="index.html">← BẢNG TUẦN HOÀN</a>
 <header class="hero">
 <div class="atom-doodle"><span></span><span></span><span></span><b>•</b></div>
-<div class="intro"><p class="eyebrow">KHÁM PHÁ NGUYÊN TỐ</p><h1 id="name">NGUYÊN TỐ</h1><p id="latin" class="latin"></p></div>
+<div class="intro"><p class="eyebrow">KHÁM PHÁ NGUYÊN TỐ</p><h1 id="name">ELEMENT</h1><p id="latin" class="latin"></p></div>
 <div class="tile"><small id="z"></small><strong id="symbol"></strong><em id="tileName"></em><span class="atomic-mass">Nguyên tử khối <b id="mass">—</b></span></div>
 <div class="flask">⚗</div>
 </header>
@@ -20,13 +20,14 @@
 <article class="card property"><div class="icon">⚛</div><div><h2>TÍNH CHẤT ĐẶC TRƯNG</h2><p id="property"></p></div></article>
 <article class="card application"><div class="icon">🔬</div><div><h2>ỨNG DỤNG THỰC TẾ</h2><p id="application"></p></div></article>
 </section>
-<section class="reveal-section">
-<p class="reveal-kicker">THỬ ĐOÁN TRƯỚC KHI MỞ</p>
-<h2 id="quizQuestion">💡 BẠN CÓ BIẾT?</h2>
+<section class="reveal-section" id="quizSection">
+<p class="reveal-kicker" id="revealKicker">THỬ ĐOÁN TRƯỚC KHI MỞ</p>
+<h2 id="quizQuestion"></h2>
 <button id="revealCard" class="reveal-card" type="button" aria-expanded="false">
-<span class="cover"><b>?</b><span>NHẤN ĐỂ MỞ ĐÁP ÁN</span><small>Đừng nhìn lén nha 👀</small></span>
+<span class="cover"><b>?</b><span id="coverTitle">NHẤN ĐỂ MỞ ĐÁP ÁN</span><small>Đừng nhìn lén nha 👀</small></span>
 <span class="answer" id="quizAnswer"></span>
 </button>
+<p class="fact" id="quizFact"></p>
 </section>
 <div class="science-strip"><span>🧪</span><span>✦</span><span>🧬</span><span>✧</span><span>🔭</span><span>✦</span><span>⚗️</span></div>
 <nav class="nav"><a id="prev" href="#">← <span></span></a><a class="home" href="index.html">BẢNG TUẦN HOÀN</a><a id="next" href="#"><span></span> →</a></nav>
