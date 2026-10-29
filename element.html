@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Khám phá nguyên tố</title>
 <link rel="stylesheet" href="element.css">
+<link rel="stylesheet" href="element-images.css">
 </head>
 <body>
 <div class="stars"></div>
@@ -16,8 +17,8 @@
 <div class="tile"><small id="z"></small><strong id="symbol"></strong><em id="tileName"></em><span class="atomic-mass">Nguyên tử khối <b id="mass">—</b></span></div>
 </header>
 <section class="content-grid">
-<article class="card property"><div class="icon">⚛</div><div><h2>TÍNH CHẤT ĐẶC TRƯNG</h2><p id="property"></p></div></article>
-<article class="card application"><div class="icon">🔬</div><div><h2>ỨNG DỤNG THỰC TẾ</h2><p id="application"></p></div></article>
+<article class="card property"><div class="icon">⚛</div><div class="card-content"><h2>TÍNH CHẤT ĐẶC TRƯNG</h2><p id="property"></p><div class="element-visual"><img id="propertyImage" src="" alt="Ảnh minh họa tính chất đặc trưng" hidden></div></div></article>
+<article class="card application"><div class="icon">🔬</div><div class="card-content"><h2>ỨNG DỤNG THỰC TẾ</h2><p id="application"></p><div class="element-visual"><img id="applicationImage" src="" alt="Ảnh minh họa ứng dụng thực tế" hidden></div></div></article>
 </section>
 <section class="reveal-section" id="quizSection">
 <p class="reveal-kicker" id="revealKicker">THỬ ĐOÁN TRƯỚC KHI MỞ</p>
@@ -36,5 +37,7 @@
 <script src="app.js"></script>
 <script src="source-data.js"></script>
 <script src="enhance.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
+<script src="docx-images.js"></script>
 </body>
 </html>
