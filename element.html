@@ -16,8 +16,8 @@
 <div class="tile"><small id="z"></small><strong id="symbol"></strong><em id="tileName"></em><span class="atomic-mass">Nguyên tử khối <b id="mass">—</b></span></div>
 </header>
 <section class="content-grid">
-<article class="card property"><div class="icon">⚛</div><div class="card-content"><h2>TÍNH CHẤT ĐẶC TRƯNG</h2><p id="property"></p><div class="element-visual"><img id="propertyImage" class="element-image" src="" alt="Ảnh minh họa tính chất đặc trưng" hidden loading="lazy"></div></div></article>
-<article class="card application"><div class="icon">🔬</div><div class="card-content"><h2>ỨNG DỤNG THỰC TẾ</h2><p id="application"></p><div class="element-visual"><img id="applicationImage" class="element-image" src="" alt="Ảnh minh họa ứng dụng thực tế" hidden loading="lazy"></div></div></article>
+<article class="card property"><div class="icon">⚛</div><div class="card-content"><h2>TÍNH CHẤT ĐẶC TRƯNG</h2><p id="property"></p><div class="element-visual"><img id="propertyImage" class="element-image zoomable-image" src="" alt="Ảnh minh họa tính chất đặc trưng" hidden loading="lazy" tabindex="0"></div></div></article>
+<article class="card application"><div class="icon">🔬</div><div class="card-content"><h2>ỨNG DỤNG THỰC TẾ</h2><p id="application"></p><div class="element-visual"><img id="applicationImage" class="element-image zoomable-image" src="" alt="Ảnh minh họa ứng dụng thực tế" hidden loading="lazy" tabindex="0"></div></div></article>
 </section>
 <section class="reveal-section" id="quizSection">
 <p class="reveal-kicker" id="revealKicker">THỬ ĐOÁN TRƯỚC KHI MỞ</p>
@@ -32,11 +32,26 @@
 <nav class="nav"><a id="prev" href="#">← <span></span></a><a class="home" href="index.html">BẢNG TUẦN HOÀN</a><a id="next" href="#"><span></span> →</a></nav>
 <footer>Nội dung: tài liệu do nhóm biên soạn • Trang thông tin nguyên tố</footer>
 </main>
+<div id="imageLightbox" class="image-lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Xem ảnh phóng to">
+<button class="lightbox-close" type="button" aria-label="Đóng ảnh">×</button>
+<img id="lightboxImage" src="" alt="Ảnh phóng to">
+<p>Nhấn ra ngoài hoặc phím Esc để đóng</p>
+</div>
 <script src="elements.js"></script>
 <script src="app.js"></script>
 <script src="source-data.js"></script>
 <script src="enhance.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
 <script src="docx-images.js?v=2"></script>
+<script>
+(()=>{
+ const box=document.getElementById('imageLightbox'), big=document.getElementById('lightboxImage');
+ const close=()=>{box.classList.remove('open');box.setAttribute('aria-hidden','true');big.removeAttribute('src');document.body.classList.remove('lightbox-open')};
+ const open=img=>{if(!img.src)return;big.src=img.src;big.alt=img.alt||'Ảnh phóng to';box.classList.add('open');box.setAttribute('aria-hidden','false');document.body.classList.add('lightbox-open')};
+ document.addEventListener('click',e=>{const img=e.target.closest('.zoomable-image');if(img&&!img.hidden)open(img)});
+ document.addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ')&&e.target.matches('.zoomable-image')){e.preventDefault();open(e.target)}else if(e.key==='Escape')close()});
+ box.addEventListener('click',e=>{if(e.target===box||e.target.closest('.lightbox-close'))close()});
+})();
+</script>
 </body>
 </html>
